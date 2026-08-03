@@ -1,46 +1,303 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lenguaje de Programación III | Portafolio</title>
+    <title>LP3 - Lenguajes de Programación III</title>
     <link rel="stylesheet" href="style.css">
+    <!-- FontAwesome para los Iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <div class="background-elements">
-        <div class="glow glow-1"></div>
-        <div class="glow glow-2"></div>
-    </div>
+    <!-- Menú de Navegación -->
+    <nav class="navbar">
+        <div class="logo">
+            <i class="fa-solid fa-code"></i> LP3-WEB
+        </div>
+        <ul class="nav-links">
+            <li><a href="#inicio" class="active">Inicio</a></li>
+            <li><a href="#proyectos">Proyectos</a></li>
+            <li><a href="#documentos">Documentos</a></li>
+        </ul>
+        <button id="theme-toggle" class="theme-btn" title="Cambiar Tema">
+            <i class="fa-solid fa-moon"></i>
+        </button>
+    </nav>
 
-    <main class="container">
-        <header class="glass-panel profile-header">
-            <h1>Lenguaje de Programación III</h1>
-            <div class="student-info">
-                <h2>Darwin Reynolds Cary Quispe</h2>
-                <p>Estadística e Informática</p>
+    <!-- Sección Hero Principal -->
+    <section id="inicio" class="hero">
+        <div class="hero-content fade-in">
+            <h1 class="glow-text">Lenguajes de Programación III</h1>
+            <p class="subtitle">Desarrollo de Aplicaciones Web y Algoritmos</p>
+            
+            <div class="pills-container">
+                <span class="pill"><i class="fa-solid fa-user-graduate"></i> Darwin Reynolds Cary Quispe</span>
+                <span class="pill"><i class="fa-solid fa-microchip"></i> Ingeniería Estadística e Informática</span>
+                <span class="pill"><i class="fa-solid fa-university"></i> Universidad Nacional del Altiplano</span>
+                <span class="pill"><i class="fa-brands fa-js"></i> HTML, CSS y JavaScript</span>
             </div>
-        </header>
 
+            <div class="hero-buttons">
+                <a href="#proyectos" class="btn btn-primary"><i class="fa-solid fa-compass"></i> Explorar</a>
+                <a href="https://github.com/TU_USUARIO/TU_REPO" target="_blank" class="btn btn-outline"><i class="fa-brands fa-github"></i> Ver Repositorio</a>
+            </div>
+        </div>
+
+        <div class="scroll-indicator">
+            <p>Scroll</p>
+            <i class="fa-solid fa-arrow-down"></i>
+        </div>
+    </section>
+
+    <!-- Contenido de Proyectos -->
+    <main class="container">
+        
+        <!-- CATEGORÍA: MACHINE LEARNING Y DATOS -->
+        <h2 id="proyectos" class="category-title fade-in"><i class="fa-solid fa-brain"></i> Machine Learning & Datos</h2>
         <section class="projects-grid">
-            <a href="./asistencia/index.html" class="glass-panel project-card">
-                <h3>Asistencia</h3>
+            <a href="./Ciencia de Datos/temperatura15/index.html" class="glass-panel project-card fade-in">
+                <i class="fa-solid fa-chart-line card-icon"></i>
+                <h3>Ciencia de Datos (Temp 15)</h3>
             </a>
-            <a href="./Bhaskara/index.html" class="glass-panel project-card">
-                <h3>Fórmula de Bhaskara</h3>
-            </a>
-            <a href="./CadenasMarkov/index.html" class="glass-panel project-card">
-                <h3>Cadenas de Markov</h3>
-            </a>
-            <a href="./Cajero/index.html" class="glass-panel project-card">
-                <h3>Cajero</h3>
-            </a>
-            <a href="./Ciencia de Datos/temperatura15/index.html" class="glass-panel project-card">
-                <h3>Ciencia de Datos</h3>
-            </a>
-            <a href="./Clasificador/index.html" class="glass-panel project-card">
+            <a href="./Clasificador/index.html" class="glass-panel project-card fade-in">
+                <i class="fa-solid fa-filter card-icon"></i>
                 <h3>Clasificador</h3>
             </a>
+            <a href="./KNN/index.html" class="glass-panel project-card fade-in">
+                <i class="fa-solid fa-project-diagram card-icon"></i>
+                <h3>Algoritmo KNN</h3>
+            </a>
+            <a href="./k-means/index.html" class="glass-panel project-card fade-in">
+                <i class="fa-solid fa-chart-pie card-icon"></i>
+                <h3>K-Means</h3>
+            </a>
+            <a href="./Machine_Learning/salud/index.html" class="glass-panel project-card fade-in">
+                <i class="fa-solid fa-heartbeat card-icon"></i>
+                <h3>ML: Salud</h3>
+            </a>
+            <a href="./Machine_Learning/temperatura/index.html" class="glass-panel project-card fade-in">
+                <i class="fa-solid fa-temperature-high card-icon"></i>
+                <h3>ML: Temperatura</h3>
+            </a>
+            <a href="./RedNeuronalArtficial/index.html" class="glass-panel project-card fade-in">
+                <i class="fa-solid fa-network-wired card-icon"></i>
+                <h3>Red Neuronal Artificial</h3>
+            </a>
+            <a href="./CadenasMarkov/index.html" class="glass-panel project-card fade-in">
+                <i class="fa-solid fa-link card-icon"></i>
+                <h3>Cadenas de Markov</h3>
+            </a>
+            <a href="./SimuladorLecturadeDatos/index.html" class="glass-panel project-card fade-in">
+                <i class="fa-solid fa-database card-icon"></i>
+                <h3>Lectura de Datos</h3>
+            </a>
+        </section>
+
+        <!-- CATEGORÍA: MATEMÁTICAS Y LÓGICA -->
+        <h2 class="category-title fade-in"><i class="fa-solid fa-square-root-variable"></i> Matemáticas y Lógica</h2>
+        <section class="projects-grid">
+            <a href="./Bhaskara/index.html" class="glass-panel project-card fade-in">
+                <i class="fa-solid fa-calculator card-icon"></i>
+                <h3>Fórmula de Bhaskara</h3>
+            </a>
+            <a href="./ConvertidorNumerico/index.html" class="glass-panel project-card fade-in">
+                <i class="fa-solid fa-exchange-alt card-icon"></i>
+                <h3>Convertidor Numérico</h3>
+            </a>
+            <a href="./GenerarMatrices/index.html" class="glass-panel project-card fade-in">
+                <i class="fa-solid fa-border-all card-icon"></i>
+                <h3>Generar Matrices</h3>
+            </a>
+            <a href="./MultiplicarMatrices/index.html" class="glass-panel project-card fade-in">
+                <i class="fa-solid fa-times card-icon"></i>
+                <h3>Multiplicar Matrices</h3>
+            </a>
+            <a href="./matriz_decision/index.html" class="glass-panel project-card fade-in">
+                <i class="fa-solid fa-code-branch card-icon"></i>
+                <h3>Matriz de Decisión</h3>
+            </a>
+            <a href="./MATRIZ_TRIANGULAR/TrianguloInferiorDerecha/index.html" class="glass-panel project-card fade-in">
+                <i class="fa-solid fa-play fa-rotate-90 card-icon"></i>
+                <h3>M. Triangular (Inf. Der)</h3>
+            </a>
+            <a href="./MATRIZ_TRIANGULAR/TrianguloInferiorIzquierdo/index.html" class="glass-panel project-card fade-in">
+                <i class="fa-solid fa-play fa-rotate-180 card-icon"></i>
+                <h3>M. Triangular (Inf. Izq)</h3>
+            </a>
+            <a href="./MATRIZ_TRIANGULAR/TrianguloSuperiorDerecha/index.html" class="glass-panel project-card fade-in">
+                <i class="fa-solid fa-play card-icon"></i>
+                <h3>M. Triangular (Sup. Der)</h3>
+            </a>
+            <a href="./MATRIZ_TRIANGULAR/TrianguloSuperiorIzquierda/index.html" class="glass-panel project-card fade-in">
+                <i class="fa-solid fa-play fa-rotate-270 card-icon"></i>
+                <h3>M. Triangular (Sup. Izq)</h3>
+            </a>
+            <a href="./Rombo/index.html" class="glass-panel project-card fade-in">
+                <i class="fa-solid fa-gem card-icon"></i>
+                <h3>Rombo Lógico</h3>
+            </a>
+        </section>
+
+        <!-- CATEGORÍA: APLICACIONES Y SIMULADORES -->
+        <h2 class="category-title fade-in"><i class="fa-solid fa-laptop-code"></i> Aplicaciones Web y Simuladores</h2>
+        <section class="projects-grid">
+            <a href="./Cajero/index.html" class="glass-panel project-card fade-in">
+                <i class="fa-solid fa-money-bill-wave card-icon"></i>
+                <h3>Cajero</h3>
+            </a>
+            <a href="./CajeroAutomatico/index.html" class="glass-panel project-card fade-in">
+                <i class="fa-solid fa-cash-register card-icon"></i>
+                <h3>Cajero Automático</h3>
+            </a>
+            <a href="./Carbono/index.html" class="glass-panel project-card fade-in">
+                <i class="fa-solid fa-leaf card-icon"></i>
+                <h3>Huella de Carbono</h3>
+            </a>
+            <a href="./CarritoCompras/index.html" class="glass-panel project-card fade-in">
+                <i class="fa-solid fa-shopping-cart card-icon"></i>
+                <h3>Carrito de Compras</h3>
+            </a>
+            <a href="./ComposicionCorporal/index.html" class="glass-panel project-card fade-in">
+                <i class="fa-solid fa-weight card-icon"></i>
+                <h3>Composición Corporal</h3>
+            </a>
+            <a href="./Formulario/templates/registro.html" class="glass-panel project-card fade-in">
+                <i class="fa-solid fa-clipboard-list card-icon"></i>
+                <h3>Formulario (App)</h3>
+            </a>
+            <a href="./GeneradorTarjetasPerfil/index.html" class="glass-panel project-card fade-in">
+                <i class="fa-solid fa-id-card card-icon"></i>
+                <h3>Generador de Tarjetas</h3>
+            </a>
+            <a href="./Horoscopo/index.html" class="glass-panel project-card fade-in">
+                <i class="fa-solid fa-star card-icon"></i>
+                <h3>Horóscopo</h3>
+            </a>
+            <a href="./IMC/index.html" class="glass-panel project-card fade-in">
+                <i class="fa-solid fa-weight-hanging card-icon"></i>
+                <h3>Calculadora IMC</h3>
+            </a>
+            <a href="./Impuestos/index.html" class="glass-panel project-card fade-in">
+                <i class="fa-solid fa-file-invoice-dollar card-icon"></i>
+                <h3>Impuestos</h3>
+            </a>
+            <a href="./Medidor/index.html" class="glass-panel project-card fade-in">
+                <i class="fa-solid fa-tachometer-alt card-icon"></i>
+                <h3>Medidor V1</h3>
+            </a>
+            <a href="./Medidor2/index.html" class="glass-panel project-card fade-in">
+                <i class="fa-solid fa-tachometer-alt card-icon"></i>
+                <h3>Medidor V2</h3>
+            </a>
+            <a href="./Portafolio/index.html" class="glass-panel project-card fade-in">
+                <i class="fa-solid fa-briefcase card-icon"></i>
+                <h3>Portafolio V1</h3>
+            </a>
+            <a href="./Promedio/index.html" class="glass-panel project-card fade-in">
+                <i class="fa-solid fa-graduation-cap card-icon"></i>
+                <h3>Promedio</h3>
+            </a>
+            <a href="./Simulador/index.html" class="glass-panel project-card fade-in">
+                <i class="fa-solid fa-cogs card-icon"></i>
+                <h3>Simulador</h3>
+            </a>
+            <a href="./SimuladorAcademico/index.html" class="glass-panel project-card fade-in">
+                <i class="fa-solid fa-user-graduate card-icon"></i>
+                <h3>Simulador Académico</h3>
+            </a>
+            <a href="./TiendaAbarrotes/index.html" class="glass-panel project-card fade-in">
+                <i class="fa-solid fa-store card-icon"></i>
+                <h3>Tienda Abarrotes</h3>
+            </a>
+            <a href="./Triaje/index.html" class="glass-panel project-card fade-in">
+                <i class="fa-solid fa-notes-medical card-icon"></i>
+                <h3>Triaje Médico</h3>
+            </a>
+            <a href="./asistencia/index.html" class="glass-panel project-card fade-in">
+                <i class="fa-solid fa-user-check card-icon"></i>
+                <h3>Asistencia</h3>
+            </a>
+            <a href="./dados/index.html" class="glass-panel project-card fade-in">
+                <i class="fa-solid fa-dice card-icon"></i>
+                <h3>Juego de Dados</h3>
+            </a>
+            <a href="./datafest/index.html" class="glass-panel project-card fade-in">
+                <i class="fa-solid fa-calendar-alt card-icon"></i>
+                <h3>Datafest</h3>
+            </a>
+            <a href="./ponderado/index.html" class="glass-panel project-card fade-in">
+                <i class="fa-solid fa-balance-scale card-icon"></i>
+                <h3>Ponderado</h3>
+            </a>
+            <a href="./LP_TARD/index.html" class="glass-panel project-card fade-in">
+                <i class="fa-brands fa-html5 card-icon"></i>
+                <h3>LP TARD (Diseño)</h3>
+            </a>
+        </section>
+
+        <!-- CATEGORÍA: INTELIGENCIAS MÚLTIPLES -->
+        <h2 class="category-title fade-in"><i class="fa-solid fa-users-cog"></i> Inteligencias Múltiples</h2>
+        <section class="projects-grid">
+            <a href="./Inteligencias_multiples/Corporal-cinestesica/index.html" class="glass-panel project-card fade-in">
+                <i class="fa-solid fa-child-reaching card-icon"></i>
+                <h3>Corporal-cinestésica</h3>
+            </a>
+            <a href="./Inteligencias_multiples/Inteligencia_linguistico-verbal/index.html" class="glass-panel project-card fade-in">
+                <i class="fa-solid fa-comments card-icon"></i>
+                <h3>Lingüístico-verbal</h3>
+            </a>
+            <a href="./Inteligencias_multiples/Inteligencia_naturalista/index.html" class="glass-panel project-card fade-in">
+                <i class="fa-solid fa-tree card-icon"></i>
+                <h3>Naturalista</h3>
+            </a>
+            <a href="./Inteligencias_multiples/Interpersonal/index.html" class="glass-panel project-card fade-in">
+                <i class="fa-solid fa-users card-icon"></i>
+                <h3>Interpersonal</h3>
+            </a>
+            <a href="./Inteligencias_multiples/Intrapersonal/index.html" class="glass-panel project-card fade-in">
+                <i class="fa-solid fa-user-gear card-icon"></i>
+                <h3>Intrapersonal</h3>
+            </a>
+            <a href="./Inteligencias_multiples/Visual-espacial/index.html" class="glass-panel project-card fade-in">
+                <i class="fa-solid fa-eye card-icon"></i>
+                <h3>Visual-espacial</h3>
+            </a>
+            <a href="./Inteligencias_multiples/logico-matematico/index.html" class="glass-panel project-card fade-in">
+                <i class="fa-solid fa-square-root-variable card-icon"></i>
+                <h3>Lógico-matemático</h3>
+            </a>
+            <a href="./Inteligencias_multiples/musical/index.html" class="glass-panel project-card fade-in">
+                <i class="fa-solid fa-music card-icon"></i>
+                <h3>Musical</h3>
+            </a>
+        </section>
+
+        <!-- CATEGORÍA: DOCUMENTOS DE LECTURA (.docx) -->
+        <h2 id="documentos" class="category-title fade-in"><i class="fa-solid fa-file-word"></i> Documentos y Teoría</h2>
+        <section class="projects-grid">
+            <button onclick="readDoc('DATOS CUALITATIVOS cuatro de mayo - copia.docx')" class="glass-panel project-card doc-card fade-in">
+                <i class="fa-solid fa-file-word card-icon doc-icon"></i>
+                <h3>Datos Cualitativos (Copia)</h3>
+            </button>
+            <button onclick="readDoc('DATOS CUALITATIVOS cuatro de mayo.docx')" class="glass-panel project-card doc-card fade-in">
+                <i class="fa-solid fa-file-word card-icon doc-icon"></i>
+                <h3>Datos Cualitativos</h3>
+            </button>
+            <button onclick="readDoc('INTELIGENCIAS MULTIPLES.docx')" class="glass-panel project-card doc-card fade-in">
+                <i class="fa-solid fa-file-word card-icon doc-icon"></i>
+                <h3>Inteligencias Múltiples</h3>
+            </button>
+            <button onclick="readDoc('RED NEURONAL ARTIFICIAL.docx')" class="glass-panel project-card doc-card fade-in">
+                <i class="fa-solid fa-file-word card-icon doc-icon"></i>
+                <h3>Red Neuronal Artificial</h3>
+            </button>
+            <button onclick="readDoc('Trazado de código en JavaScript.docx')" class="glass-panel project-card doc-card fade-in">
+                <i class="fa-solid fa-file-word card-icon doc-icon"></i>
+                <h3>Trazado de Código JS</h3>
+            </button>
         </section>
     </main>
+
+    <script src="script.js"></script>
 </body>
 </html>
