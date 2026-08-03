@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neurona Lineal - Interactiva</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Red Neuronal Lineal</h1>
+        <div class="canvas-container">
+            <canvas id="plotCanvas" width="800" height="450"></canvas>
+            <div id="canvasHint" class="canvas-hint">Haz clic en el plano para colocar 2 puntos</div>
+        </div>
+        <div class="metrics">
+            <div class="card">
+                <div class="card-label">Ecuación de Regresión</div>
+                <div id="equation" class="card-value gold-text">y = 0.00x + 0.00</div>
+            </div>
+            <div class="card">
+                <div class="card-label">Pérdida (MSE)</div>
+                <div id="loss" class="card-value neon-text">0.0000</div>
+            </div>
+            <div class="card full-width">
+                <div class="card-label">Métricas Estadísticas y Geométricas</div>
+                <div class="sub-metrics">
+                    <div>Media Aritmética X: <span id="meanX" class="gold-text">-</span></div>
+                    <div>Media Geométrica X: <span id="geoX" class="neon-text">-</span></div>
+                    <div>Media Aritmética Y: <span id="meanY" class="gold-text">-</span></div>
+                    <div>Media Geométrica Y: <span id="geoY" class="neon-text">-</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="controls">
+            <button id="trainBtn" disabled>Esperando Puntos...</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

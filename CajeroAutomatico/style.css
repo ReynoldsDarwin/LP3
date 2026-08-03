@@ -1,0 +1,110 @@
+
+
+body {
+    background-color: #F4F4F4; /* Gris claro institucional */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.atm-card {
+    background: white;
+    color: #002A4E;
+    padding: 0; /* Quitamos padding para que el header llegue a los bordes */
+    border-radius: 12px;
+    width: 380px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    overflow: hidden; /* Para que el radio del borde afecte al header */
+    border: 1px solid #e0e0e0;
+}
+
+h1 {
+    background-color: #002A4E; /* Azul BCP */
+    color: white;
+    margin: 0;
+    padding: 20px;
+    font-size: 1.4rem;
+    text-align: center;
+    font-weight: 600;
+}
+
+.screen {
+    background: #ffffff;
+    color: #002A4E;
+    padding: 25px;
+    text-align: center;
+    border-bottom: 2px solid #F4F4F4;
+}
+
+.screen p {
+    margin: 0;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #666;
+}
+
+#saldoDisplay {
+    font-size: 2.2rem;
+    margin: 10px 0 0 0;
+    color: #002A4E;
+    font-weight: bold;
+}
+
+.inputs {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input, select {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    outline: none;
+    transition: border 0.3s;
+}
+
+input:focus, select:focus {
+    border: 1px solid #002A4E;
+}
+
+button {
+    background: #FF6000; /* Naranja BCP */
+    color: white;
+    padding: 15px;
+    border-radius: 30px; /* Bordes más redondeados tipo app */
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s, transform 0.1s;
+}
+
+button:hover {
+    background: #e55600;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+.receipt {
+    margin: 0 25px 25px 25px;
+    background: #EBF1F7; /* Azul muy clarito para el estado */
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    border-left: 4px solid #FF6000;
+    color: #e55600;
+}
+
+#mensajeEstado {
+    margin: 5px 0 0 0;
+    color: #333;
+}

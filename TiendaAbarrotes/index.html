@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Mi Bodega - Facturación</title>
+</head>
+<body>
+    <div class="card">
+        <h2>🛍️ Mi Bodega</h2>
+        <div class="input-group">
+            <label>Producto:</label>
+            <select id="producto">
+                <option value="arroz">Arroz (S/ 4.50)</option>
+                <option value="aceite">Aceite (S/ 12.00)</option>
+                <option value="leche">Leche (S/ 5.20)</option>
+                <option value="vodka">Vodka (S/ 100.00)</option>
+            </select>
+        </div>
+        <div class="input-group">
+            <label>Cantidad:</label>
+            <input type="number" id="cantidad" placeholder="1">
+        </div>
+        <button id="btnCalcular">Generar Ticket</button>
+
+        <div id="ticket" class="ticket-container hidden">
+            <h4>--- TICKET DE VENTA ---</h4>
+            <p>Producto: <span id="resProducto"></span></p>
+            <p>Cantidad: <span id="resCantidad"></span></p>
+            <hr>
+            <p>Subtotal: <span id="resSubtotal"></span></p>
+            <p>Descuento: <span id="resDescuento"></span></p>
+            <p>IVA (18%): <span id="resIva"></span></p>
+            <p class="total">Total: <span id="resTotal"></span></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

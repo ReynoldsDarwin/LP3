@@ -1,0 +1,122 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    color: #2c3e50;
+    margin-bottom: 30px;
+}
+
+.controls {
+    margin-bottom: 25px;
+    background: white;
+    padding: 15px 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.controls label {
+    font-weight: bold;
+    color: #34495e;
+}
+
+.matrix-container {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.matrix-box {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    text-align: center;
+    min-width: 200px;
+}
+
+.matrix-box h3 {
+    margin-top: 0;
+    color: #2c3e50;
+    border-bottom: 2px solid #ecf0f1;
+    padding-bottom: 10px;
+}
+
+.grid {
+    display: grid;
+    gap: 8px;
+    margin-top: 15px;
+    justify-content: center;
+}
+
+input[type="number"] {
+    width: 55px;
+    padding: 8px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+button {
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+    font-weight: bold;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+#btn-generate {
+    background-color: #3498db;
+}
+
+#btn-generate:hover {
+    background-color: #2980b9;
+}
+
+#btn-multiply {
+    background-color: #2ecc71;
+    font-size: 18px;
+    padding: 12px 30px;
+    box-shadow: 0 4px 6px rgba(46, 204, 113, 0.2);
+}
+
+#btn-multiply:hover {
+    background-color: #27ae60;
+}
+
+.result-box {
+    background: #e8f4f8;
+    border: 2px dashed #3498db;
+}
+
+.result-cell {
+    font-weight: bold;
+    color: #2c3e50;
+    background: #fff;
+    padding: 10px;
+    border: 1px solid #3498db;
+    border-radius: 4px;
+    min-width: 55px;
+    text-align: center;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+}

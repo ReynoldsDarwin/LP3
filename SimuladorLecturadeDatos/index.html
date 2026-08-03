@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard Ciencia de Datos - Puno</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <!-- ENCABEZADO -->
+    <header class="header">
+
+        <h1>Dashboard de Ciencia de Datos</h1>
+
+        <p>
+            Análisis de temperaturas simuladas de la ciudad de Puno durante un mes
+        </p>
+
+    </header>
+
+
+    <!-- TARJETAS ESTADÍSTICAS -->
+    <section class="cards">
+
+        <div class="card">
+
+            <span>Temperatura promedio</span>
+
+            <strong id="promedio">--</strong>
+
+        </div>
+
+
+        <div class="card">
+
+            <span>Temperatura máxima</span>
+
+            <strong id="maxima">--</strong>
+
+        </div>
+
+
+        <div class="card">
+
+            <span>Temperatura mínima</span>
+
+            <strong id="minima">--</strong>
+
+        </div>
+
+
+        <div class="card">
+
+            <span>Días analizados</span>
+
+            <strong id="cantidad">--</strong>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="panel">
+
+
+        <!-- TABLA -->
+        <section class="tabla caja">
+
+            <h3>Datos diarios</h3>
+
+
+            <div class="tabla-scroll">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Día</th>
+                            <th>Fecha</th>
+                            <th>Temperatura</th>
+                            <th>Estado</th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="datos">
+
+                    </tbody>
+
+
+                </table>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- GRAFICO LINEA -->
+        <section class="grafico linea caja">
+
+            <h3>Variación de temperatura</h3>
+
+            <canvas id="graficoLinea"></canvas>
+
+        </section>
+
+
+
+        <!-- GRAFICO BARRAS -->
+        <section class="grafico barras caja">
+
+            <h3>Temperatura por día</h3>
+
+            <canvas id="graficoBarras"></canvas>
+
+        </section>
+
+
+
+        <!-- GRAFICO CIRCULAR -->
+        <section class="grafico circular caja">
+
+            <h3>Clasificación climática</h3>
+
+            <canvas id="graficoCircular"></canvas>
+
+        </section>
+
+
+    </main>
+
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

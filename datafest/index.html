@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DATA FEST — UNA</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&family=Source+Serif+4:ital,wght@0,300;0,600;1,300&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <!-- ═══════════════════════ HEADER ═══════════════════════ -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="header-brand">
+        <span class="brand-sigla">UNA</span>
+        <div class="brand-text">
+          <p class="brand-uni">Universidad Nacional del Altiplano</p>
+          <p class="brand-event">DATA FEST — Sistema de Certificados</p>
+        </div>
+      </div>
+      <nav class="header-nav">
+        <button class="nav-btn active" data-view="registro">Registro</button>
+        <button class="nav-btn" data-view="lista">Participantes</button>
+        <button class="nav-btn" data-view="certificado">Certificado</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════ MAIN ═══════════════════════ -->
+  <main>
+
+    <!-- ── VISTA 1: REGISTRO ── -->
+    <section id="view-registro" class="view active">
+      <div class="section-hero">
+        <span class="hero-eyebrow">Inscripción</span>
+        <h1 class="hero-title">Registrar Participante</h1>
+      </div>
+
+      <div class="card form-card">
+        <div class="form-grid">
+
+          <div class="field-group full">
+            <label for="codigo">Código del Participante</label>
+            <input type="text" id="codigo" placeholder="Ej. 2024-INF-001" maxlength="30"/>
+          </div>
+
+          <div class="field-group full">
+            <label for="nombres">Apellidos y Nombres</label>
+            <input type="text" id="nombres" placeholder="MAMANI QUISPE, Juan Carlos"/>
+          </div>
+
+          <div class="field-group">
+            <label for="semestre">Semestre</label>
+            <select id="semestre">
+              <option value="">— Seleccionar —</option>
+              <option>I Semestre</option>
+              <option>II Semestre</option>
+              <option>III Semestre</option>
+              <option>IV Semestre</option>
+              <option>V Semestre</option>
+              <option>VI Semestre</option>
+              <option>VII Semestre</option>
+              <option>VIII Semestre</option>
+              <option>IX Semestre</option>
+              <option>X Semestre</option>
+            </select>
+          </div>
+
+          <div class="field-group">
+            <label for="fecha">Fecha del Evento</label>
+            <input type="date" id="fecha"/>
+          </div>
+
+          <div class="field-group full">
+            <label for="titulo">Título / Problema Resuelto</label>
+            <input type="text" id="titulo" placeholder="Ej. Análisis predictivo con regresión lineal"/>
+          </div>
+
+          <div class="field-group full">
+            <label for="grupo">Nombre del Grupo</label>
+            <input type="text" id="grupo" placeholder="Ej. Equipo Alpha Data"/>
+          </div>
+
+        </div>
+
+        <div class="form-actions">
+          <button class="btn-primary" id="btn-registrar">Registrar Participante</button>
+          <button class="btn-ghost" id="btn-limpiar">Limpiar</button>
+        </div>
+
+        <div id="form-msg" class="form-msg hidden"></div>
+      </div>
+
+      <div class="storage-info">
+        <span class="info-icon">🗄️</span>
+        <span>Los datos se guardan en <strong>LocalStorage</strong> de tu navegador — persisten aunque cierres la pestaña.</span>
+      </div>
+    </section>
+
+    <!-- ── VISTA 2: LISTA PARTICIPANTES ── -->
+    <section id="view-lista" class="view">
+      <div class="section-hero">
+        <span class="hero-eyebrow">Base de datos local</span>
+        <h1 class="hero-title">Participantes Registrados</h1>
+      </div>
+
+      <div class="list-toolbar">
+        <input type="search" id="buscador" placeholder="Buscar por nombre, código o grupo…"/>
+        <button class="btn-danger-ghost" id="btn-borrar-todo">Borrar Todo</button>
+      </div>
+
+      <div id="tabla-container">
+        <table class="data-table" id="tabla-participantes">
+          <thead>
+            <tr>
+              <th>Código</th>
+              <th>Apellidos y Nombres</th>
+              <th>Semestre</th>
+              <th>Grupo</th>
+              <th>Fecha</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="tabla-body"></tbody>
+        </table>
+        <p class="empty-state hidden" id="empty-state">No hay participantes registrados todavía.</p>
+      </div>
+    </section>
+
+    <!-- ── VISTA 3: CERTIFICADO ── -->
+    <section id="view-certificado" class="view">
+      <div class="section-hero">
+        <span class="hero-eyebrow">Generador</span>
+        <h1 class="hero-title">Certificado de Participación</h1>
+      </div>
+
+      <div class="cert-selector card">
+        <label for="sel-participante">Seleccionar participante</label>
+        <div class="sel-row">
+          <select id="sel-participante">
+            <option value="">— Elige un participante —</option>
+          </select>
+          <button class="btn-primary" id="btn-generar">Generar certificado</button>
+          <button class="btn-secondary" id="btn-imprimir" disabled>Imprimir / PDF</button>
+        </div>
+      </div>
+
+      <!-- CERTIFICADO VISUAL -->
+      <div id="cert-wrapper" class="hidden">
+        <div class="cert-page" id="certificado-visual">
+
+          <div class="cert-header-band"></div>
+
+          <div class="cert-body">
+            <div class="cert-logos-row">
+              <div class="cert-escudo">
+                <svg viewBox="0 0 60 60" width="60" height="60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="30" cy="30" r="28" stroke="#1a3a6b" stroke-width="2.5"/>
+                  <text x="50%" y="38%" dominant-baseline="middle" text-anchor="middle" font-size="11" font-weight="700" fill="#1a3a6b" font-family="Montserrat, sans-serif">UNA</text>
+                  <text x="50%" y="62%" dominant-baseline="middle" text-anchor="middle" font-size="6" fill="#1a3a6b" font-family="Montserrat, sans-serif">PUNO</text>
+                </svg>
+              </div>
+              <div class="cert-inst-info">
+                <p class="cert-uni-name">UNIVERSIDAD NACIONAL DEL ALTIPLANO</p>
+                <p class="cert-fac-name">Facultad de Ingeniería Estadística e Informática</p>
+              </div>
+            </div>
+
+            <div class="cert-event-label">DATA FEST</div>
+
+            <h2 class="cert-title-doc">CERTIFICADO DE PARTICIPACIÓN</h2>
+
+            <p class="cert-otorga">La Universidad Nacional del Altiplano — Puno certifica que:</p>
+
+            <p class="cert-nombre-participante" id="cert-nombre"></p>
+
+            <p class="cert-parrafo">
+              identificado con código <strong id="cert-codigo"></strong>, del <strong id="cert-semestre"></strong>,
+              participó satisfactoriamente en el evento académico <strong>DATA FEST</strong> presentando el trabajo titulado:
+            </p>
+
+            <p class="cert-titulo-trabajo" id="cert-titulo"></p>
+
+            <p class="cert-parrafo">en representación del grupo <strong id="cert-grupo"></strong>,
+              celebrado el día <strong id="cert-fecha"></strong>.</p>
+
+            <div class="cert-firmas">
+              <div class="cert-firma-bloque">
+                <div class="cert-firma-linea"></div>
+                <p class="cert-firma-cargo">Decano de Facultad</p>
+              </div>
+              <div class="cert-firma-bloque">
+                <div class="cert-firma-linea"></div>
+                <p class="cert-firma-cargo">Secretario Técnico</p>
+              </div>
+            </div>
+
+            <div class="cert-qr-area">
+              <div class="cert-qr-box" id="cert-qr-display">QR</div>
+              <p class="cert-qr-label">Verificación<br/>de Autenticidad</p>
+            </div>
+
+          </div>
+
+          <div class="cert-footer-band"></div>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════ TOAST ═══════════════════════ -->
+  <div id="toast" class="toast hidden"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>

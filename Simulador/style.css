@@ -1,0 +1,59 @@
+body {
+    background-color: #1e272e;
+    font-family: 'Courier New', monospace;
+    display: flex;
+    justify-content: center;
+    padding: 50px;
+}
+
+.monitor-card {
+    background: #2f3640;
+    color: #f5f6fa;
+    padding: 25px;
+    border-radius: 10px;
+    width: 320px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+    border: 2px solid #7f8c8d;
+}
+
+.sensor-input {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.valor-actual {
+    text-align: center;
+    font-size: 2rem;
+    color: #00d2d3;
+    margin: 10px 0;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background: #00d2d3;
+    color: #2f3640;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.pantalla-digital {
+    margin-top: 20px;
+    padding: 15px;
+    background: #1a1a1a;
+    border: 1px solid #00d2d3;
+    border-radius: 5px;
+}
+
+.triangulo {
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 30px solid transparent;
+    margin: 10px auto;
+    background-color: transparent;
+}   

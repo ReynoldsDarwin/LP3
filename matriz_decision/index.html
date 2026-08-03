@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matriz de Decisión | Premium</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Matriz de Decisión Ponderada</h1>
+            <p>Evalúa tus opciones objetivamente asignando pesos y puntuaciones.</p>
+        </header>
+
+        <nav class="tabs" id="tabs-container">
+            <button class="tab-btn active" data-template="carrera">¿Qué carrera estudiar?</button>
+            <button class="tab-btn" data-template="mudanza">¿Debería mudarme?</button>
+            <button class="tab-btn" data-template="auto">¿Qué auto comprar?</button>
+        </nav>
+
+        <main class="card">
+            <div class="table-responsive">
+                <table id="decision-matrix">
+                    </table>
+            </div>
+            
+            <div class="result-section">
+                <h2>Mejor Opción: <span id="winner-text" class="highlight">-</span></h2>
+                <p>Basado en el puntaje más alto (Peso × Puntuación [1-10]).</p>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,161 @@
+:root {
+    --essalud-blue: #005696;
+    --essalud-light: #e3f2fd;
+    --text-dark: #2c3e50;
+    --border: #d1d8e0;
+    --p1: #d32f2f; /* Rojo - Emergencia */
+    --p2: #ef6c00; /* Naranja - Urgencia Mayor */
+    --p3: #fbc02d; /* Amarillo - Urgencia Menor */
+    --p4: #2e7d32; /* Verde - No Urgente */
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: var(--text-dark);
+}
+
+.hospital-frame {
+    background: white;
+    width: 95%;
+    max-width: 650px;
+    border-radius: 12px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    overflow: hidden;
+    border: 1px solid var(--border);
+}
+
+.header-essalud {
+    background-color: var(--essalud-blue);
+    color: white;
+    padding: 18px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-area { display: flex; align-items: center; gap: 12px; }
+.logo-icon { font-size: 28px; }
+.logo-text { display: flex; flex-direction: column; line-height: 1.2; }
+.logo-text strong { font-size: 1rem; letter-spacing: 0.5px; }
+.logo-text span { font-size: 0.7rem; opacity: 0.85; text-transform: uppercase; }
+
+.date-info { font-size: 0.75rem; background: rgba(255,255,255,0.1); padding: 4px 8px; border-radius: 4px; }
+
+.content { padding: 30px; }
+
+h3 {
+    margin-top: 0;
+    color: var(--essalud-blue);
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.step {
+    background: var(--essalud-blue);
+    color: white;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 0.8rem;
+}
+
+.input-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px 20px;
+    margin-bottom: 30px;
+}
+
+.field { display: flex; flex-direction: column; gap: 6px; }
+label { font-size: 0.8rem; font-weight: 700; color: #5f6c7b; text-transform: uppercase; }
+
+select {
+    padding: 12px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background: #fdfdfd;
+    font-size: 0.9rem;
+    color: var(--text-dark);
+}
+
+select:focus { border-color: var(--essalud-blue); outline: none; box-shadow: 0 0 5px rgba(0,86,150,0.2); }
+
+.btn-evaluar {
+    width: 100%;
+    background: var(--essalud-blue);
+    color: white;
+    border: none;
+    padding: 16px;
+    font-weight: bold;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+    letter-spacing: 1px;
+}
+
+.btn-evaluar:hover { background: #003d6b; transform: translateY(-1px); }
+
+.result-area {
+    margin-top: 25px;
+    padding: 20px;
+    border-radius: 8px;
+    background: #f8fafc;
+    border: 1px dashed var(--border);
+}
+
+.prioridad-box {
+    padding: 15px;
+    border-radius: 6px;
+    color: white;
+    font-weight: 800;
+    font-size: 1.2rem;
+    text-align: center;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.p1 { background-color: var(--p1); box-shadow: 0 4px 12px rgba(211,47,47,0.3); }
+.p2 { background-color: var(--p2); box-shadow: 0 4px 12px rgba(239,108,0,0.3); }
+.p3 { background-color: var(--p3); color: #333; box-shadow: 0 4px 12px rgba(251,192,45,0.3); }
+.p4 { background-color: var(--p4); box-shadow: 0 4px 12px rgba(46,125,50,0.3); }
+
+.derivation-box {
+    text-align: left;
+    background: white;
+    padding: 15px;
+    border-radius: 6px;
+    border-left: 5px solid var(--essalud-blue);
+}
+
+.derivation-box p { margin: 5px 0; font-size: 0.9rem; line-height: 1.4; }
+.badge-area {
+    background: var(--essalud-light);
+    color: var(--essalud-blue);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.footer-status {
+    background: #f1f4f9;
+    font-size: 0.65rem;
+    color: #7f8c8d;
+    text-align: center;
+    padding: 12px;
+    border-top: 1px solid #e2e8f0;
+}
+
+.placeholder-text { color: #a4b0be; font-style: italic; text-align: center; }

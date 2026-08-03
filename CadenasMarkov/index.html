@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Cadenas de Markov</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Cadenas de Markov</h1>
+        
+        <div class="main-layout">
+            <div class="left-panel">
+                <div class="matrix-container">
+                    <div class="panel-title">Matriz de Transición (P)</div>
+                    <div class="matrix-grid">
+                        <div></div><div class="header-cell">Sol</div><div class="header-cell">Nub</div><div class="header-cell">Llu</div>
+                        <div class="header-cell">Soleado</div>
+                        <input type="number" id="p00" min="0" max="1" step="0.1" value="0.7">
+                        <input type="number" id="p01" min="0" max="1" step="0.1" value="0.2">
+                        <input type="number" id="p02" min="0" max="1" step="0.1" value="0.1">
+                        
+                        <div class="header-cell">Nublado</div>
+                        <input type="number" id="p10" min="0" max="1" step="0.1" value="0.3">
+                        <input type="number" id="p11" min="0" max="1" step="0.1" value="0.4">
+                        <input type="number" id="p12" min="0" max="1" step="0.1" value="0.3">
+                        
+                        <div class="header-cell">Lluvioso</div>
+                        <input type="number" id="p20" min="0" max="1" step="0.1" value="0.2">
+                        <input type="number" id="p21" min="0" max="1" step="0.1" value="0.4">
+                        <input type="number" id="p22" min="0" max="1" step="0.1" value="0.4">
+                    </div>
+                </div>
+
+                <div class="state-container">
+                    <div class="panel-title">Distribución de Estado</div>
+                    <div class="state-bars">
+                        <div class="bar-group">
+                            <span class="label">Soleado</span>
+                            <div class="bar-wrapper"><div id="bar0" class="bar gold-bg" style="width: 100%;"></div></div>
+                            <span id="val0" class="value gold-text">1.0000</span>
+                        </div>
+                        <div class="bar-group">
+                            <span class="label">Nublado</span>
+                            <div class="bar-wrapper"><div id="bar1" class="bar neon-bg" style="width: 0%;"></div></div>
+                            <span id="val1" class="value neon-text">0.0000</span>
+                        </div>
+                        <div class="bar-group">
+                            <span class="label">Lluvioso</span>
+                            <div class="bar-wrapper"><div id="bar2" class="bar neon-bg" style="width: 0%;"></div></div>
+                            <span id="val2" class="value neon-text">0.0000</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="right-panel">
+                <div class="graph-container">
+                    <div class="panel-title">Grafo de Transiciones</div>
+                    <canvas id="graphCanvas" width="400" height="400"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <div class="metrics">
+            <div class="card">
+                <div class="card-label">Paso / Transición</div>
+                <div id="stepCount" class="card-value gold-text">0</div>
+            </div>
+            <div class="card">
+                <div class="card-label">Estado Predominante</div>
+                <div id="currentState" class="card-value neon-text">Soleado</div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button id="btnReset" class="btn-secondary">Reiniciar</button>
+            <button id="btnNext" class="btn-primary">Siguiente Paso</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

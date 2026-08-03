@@ -1,0 +1,177 @@
+:root {
+    --bg-color: #0a0a0b;
+    --card-bg: #161618;
+    --accent-gold: #c5a059;
+    --text-main: #ffffff;
+    --text-muted: #a0a0a0;
+    --transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Navbar */
+nav {
+    padding: 30px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    background: rgba(10, 10, 11, 0.8);
+    backdrop-filter: blur(10px);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: var(--accent-gold);
+}
+
+.nav-links a {
+    color: var(--text-main);
+    text-decoration: none;
+    margin-left: 30px;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: var(--transition);
+}
+
+.nav-links a:hover {
+    color: var(--accent-gold);
+}
+
+/* Hero Section */
+.hero {
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    padding-top: 100px;
+}
+
+.subtitle {
+    color: var(--accent-gold);
+    letter-spacing: 5px;
+    font-size: 0.7rem;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    margin-bottom: 20px;
+}
+
+.hero-desc {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    max-width: 600px;
+    font-weight: 300;
+}
+
+/* Proyectos */
+.projects { padding: 100px 0; }
+
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    border-bottom: 1px solid var(--accent-gold);
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.project-card {
+    background: var(--card-bg);
+    padding: 40px;
+    border: 1px solid rgba(255,255,255,0.05);
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.project-card:hover {
+    border-color: var(--accent-gold);
+    transform: translateY(-10px);
+}
+
+.project-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.project-card p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+}
+
+.tags span {
+    font-size: 0.7rem;
+    color: var(--accent-gold);
+    border: 1px solid var(--accent-gold);
+    padding: 4px 10px;
+    margin-right: 5px;
+    text-transform: uppercase;
+}
+
+/* Habilidades */
+.skills { padding: 100px 0; background: #0e0e10; }
+
+.skills-flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.skill-item {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 15px 30px;
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+.skill-item:hover {
+    border-color: var(--accent-gold);
+    color: var(--accent-gold);
+}
+
+footer {
+    padding: 50px 0;
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}

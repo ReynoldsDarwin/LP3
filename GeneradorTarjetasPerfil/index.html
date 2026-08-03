@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Perfiles</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Editor de Perfil</h1>
+        
+        <div class="form-group">
+            <label>Nombre:</label>
+            <input type="text" id="inputNombre" placeholder="Ej: Ana">
+            
+            <label>Apellido Paterno:</label>
+            <input type="text" id="inputPaterno" placeholder="Ej: García">
+            
+            <label>Apellido Materno:</label>
+            <input type="text" id="inputMaterno" placeholder="Ej: López">
+            
+            <label>Año de Nacimiento:</label>
+            <input type="number" id="inputAnio" placeholder="Ej: 1995">
+            
+            <label>Estado:</label>
+            <select id="inputEstado">
+                <option value="Disponible">Disponible</option>
+                <option value="Ocupado">Ocupado</option>
+                <option value="Fuera de línea">Fuera de línea</option>
+            </select>
+        </div>
+
+        <button onclick="generarPerfil()">Actualizar Perfil</button>
+
+        <div id="card" class="profile-card">
+            <div class="temp">
+                <h2 id="displayNombre">Nombre: </h2>
+            </div>
+            <div class="temp">
+                <h2 id="displayPaterno">Apellido Paterno: </h2>
+            </div>
+            <div class="temp">
+                <h2 id="displayMaterno">Apellido Materno: </h2>
+            </div>
+            <div class="temp">
+                <p id="displayEdad">Edad: --</p>
+            </div>    
+            <div class="temp">
+                <p id="displayEstado" class="status">Estado: --</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

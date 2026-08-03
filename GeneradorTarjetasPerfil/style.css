@@ -1,0 +1,61 @@
+/* Estilos generales */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    padding: 50px;
+}
+
+.container {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    width: 450px; 
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+input, select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.profile-card {
+    margin-top: 30px;
+    padding: 20px;
+    border-left: 5px solid #007bff;
+    background: #fafafa;
+    display: flex;
+    flex-direction: row; 
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: center;
+}
+
+.profile-card h2, .profile-card p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+.status {
+    font-weight: bold;
+    color: #555;
+}

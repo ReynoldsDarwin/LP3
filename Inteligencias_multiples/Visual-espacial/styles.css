@@ -1,0 +1,179 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Inter,sans-serif;
+}
+
+body{
+
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:
+    radial-gradient(circle at top left,#2563eb33,transparent),
+    radial-gradient(circle at bottom right,#7c3aed33,transparent),
+    #020617;
+
+    padding:20px;
+}
+
+.container{
+
+    width:100%;
+    max-width:900px;
+}
+
+h1{
+
+    text-align:center;
+    color:white;
+    margin-bottom:20px;
+}
+
+.progress{
+
+    height:12px;
+    border-radius:20px;
+
+    overflow:hidden;
+
+    background:#1e293b;
+
+    margin-bottom:15px;
+}
+
+.progress-bar{
+
+    width:10%;
+    height:100%;
+
+    background:
+    linear-gradient(
+        90deg,
+        #2563eb,
+        #60a5fa
+    );
+
+    transition:.4s;
+}
+
+.counter{
+
+    color:#cbd5e1;
+    margin-bottom:20px;
+}
+
+.card{
+
+    background:#0f172a;
+
+    border:1px solid #1e293b;
+
+    border-radius:24px;
+
+    padding:30px;
+}
+
+h2{
+
+    color:white;
+    margin-bottom:20px;
+}
+
+#visualArea{
+
+    min-height:120px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    gap:15px;
+
+    margin-bottom:30px;
+
+    font-size:3rem;
+
+    color:white;
+}
+
+.answers{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:12px;
+}
+
+.answer{
+
+    background:#1e293b;
+
+    border:none;
+
+    color:white;
+
+    padding:15px;
+
+    border-radius:14px;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.answer:hover{
+
+    transform:translateY(-2px);
+}
+
+.selected{
+
+    background:#2563eb;
+}
+
+#nextBtn{
+
+    width:100%;
+
+    margin-top:20px;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:14px;
+
+    color:white;
+
+    background:
+    linear-gradient(
+        135deg,
+        #2563eb,
+        #3b82f6
+    );
+
+    cursor:pointer;
+}
+
+.hidden{
+    display:none;
+}
+
+#result{
+
+    background:#0f172a;
+
+    padding:30px;
+
+    border-radius:24px;
+
+    color:white;
+
+    text-align:center;
+}

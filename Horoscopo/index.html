@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lector de Horóscopo</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>🔯 Tu Signo Zodiacal</h1>
+        <p>Ingresa tu fecha de nacimiento:</p>
+        
+        <div class="form-group">
+            <input type="number" id="dia" placeholder="Día (1-31)" min="1" max="31">
+            <select id="mes">
+                <option value="1">Enero</option>
+                <option value="2">Febrero</option>
+                <option value="3">Marzo</option>
+                <option value="4">Abril</option>
+                <option value="5">Mayo</option>
+                <option value="6">Junio</option>
+                <option value="7">Julio</option>
+                <option value="8">Agosto</option>
+                <option value="9">Septiembre</option>
+                <option value="10">Octubre</option>
+                <option value="11">Noviembre</option>
+                <option value="12">Diciembre</option>
+            </select>
+        </div>
+
+        <button onclick="leerHoroscopo()">Descubrir Signo</button>
+
+        <div id="resultado" class="result-box"></div>
+    </div>
+
+    <script src="/scripts/script.js"></script>
+</body>
+</html>

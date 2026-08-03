@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador K-Nearest Neighbors</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Clasificador K-Nearest Neighbors</h1>
+        
+        <div class="main-layout">
+            <div class="canvas-container">
+                <canvas id="knnCanvas" width="800" height="450"></canvas>
+                <div id="canvasHint" class="canvas-hint">Haz clic en el plano para clasificar un punto</div>
+            </div>
+
+            <div class="sidebar">
+                <div class="panel-title">Configuración Básica</div>
+                <div class="control-group">
+                    <label for="kValue">Número de Vecinos (K)</label>
+                    <input type="number" id="kValue" min="1" max="15" value="3" step="2">
+                </div>
+                
+                <div class="panel-title">Ecuación de Distancia</div>
+                <div class="formula-card">
+                    d = √((x₂-x₁)² + (y₂-y₁)²)
+                </div>
+
+                <div class="panel-title">Resultado de Votación</div>
+                <div class="metrics">
+                    <div class="card">
+                        <div class="card-label">Votos Clase Oro</div>
+                        <div id="votosOro" class="card-value gold-text">0</div>
+                    </div>
+                    <div class="card">
+                        <div class="card-label">Votos Clase Neón</div>
+                        <div id="votosNeon" class="card-value neon-text">0</div>
+                    </div>
+                </div>
+                <div class="card full-width">
+                    <div class="card-label">Predicción Final</div>
+                    <div id="predictionResult" class="card-value">-</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button id="btnGenerate" class="btn-primary">Regenerar Dataset</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

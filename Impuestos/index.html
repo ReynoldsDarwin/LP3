@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Justicia Tributaria con Código</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Justicia Tributaria con Código</h1>
+            <p>Simulador de Contribución y Conciencia Fiscal</p>
+        </header>
+
+        <main class="card">
+            <div class="input-group">
+                <label for="ingreso">Ingreso Mensual Bruto (S/.):</label>
+                <input type="number" id="ingreso" placeholder="Ej: 3500" min="0">
+            </div>
+            
+            <button onclick="calcularImpuestos()" class="btn-calc">Calcular Aporte</button>
+
+            <div id="resultado" class="result-area" style="display: none;">
+                <div class="res-item">
+                    <span>Categoría:</span>
+                    <strong id="categoria-text"></strong>
+                </div>
+                <div class="res-item">
+                    <span>Tasa Aplicada:</span>
+                    <strong id="tasa-text"></strong>
+                </div>
+                <div class="res-total">
+                    <span>Impuesto a Pagar:</span>
+                    <h2 id="monto-final"></h2>
+                </div>
+                <p class="nota-tributaria">"Tus impuestos se traducen en servicios para todos."</p>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

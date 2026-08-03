@@ -1,0 +1,58 @@
+body {
+    background-color: #f0f4f8;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+}
+
+.grade-card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    width: 350px;
+}
+
+h2 { color: #2c3e50; text-align: center; }
+
+.form-group { display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; }
+
+label { font-size: 12px; font-weight: bold; color: #546e7a; }
+
+input {
+    padding: 10px;
+    border: 1px solid #cfd8dc;
+    border-radius: 6px;
+    outline: none;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background: #3949ab;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover { background: #283593; }
+
+.boleta-container {
+    margin-top: 25px;
+    padding: 15px;
+    background: #fafafa;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    display: none;
+}
+
+.status-badge {
+    text-align: center;
+    padding: 10px;
+    border-radius: 4px;
+    font-weight: bold;
+    margin-top: 10px;
+}

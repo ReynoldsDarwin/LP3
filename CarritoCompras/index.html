@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora de Compra</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="shop-container">
+        <h2>Mi Carrito</h2>
+        
+        <div class="input-box">
+            <label>Producto (Cadena):</label>
+            <input type="text" id="producto" placeholder="Ej: Laptop Gamer">
+            
+            <label>Precio Unitario (Cuantitativo):</label>
+            <input type="number" id="precio" step="0.01">
+            
+            <label>Cantidad (Cuantitativo):</label>
+            <input type="number" id="cantidad" value="1">
+            
+            <label>Tipo de Envío (Cualitativo):</label>
+            <select id="envio">
+                <option value="0">Recojo en tienda ($0)</option>
+                <option value="5">Normal ($5)</option>
+                <option value="15">Express ($15)</option>
+            </select>
+        </div>
+
+        <button onclick="calcularTotal()">Calcular Factura</button>
+
+        <div id="resultado" class="factura">
+            <p id="resTexto">Esperando datos...</p>
+            <hr>
+            <h3 id="resTotal">$ 0.00</h3>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+:root {
+    --bg: #fdfdfd;
+    --text: #1d1d1f;
+    --sub: #86868b;
+    --accent: #0071e3;
+    --border: #d2d2d7;
+    --danger: #ff3b30;
+    --success: #34c759;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: linear-gradient(135deg, #e8f5e9, #3f7fad, #f5f5f7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.04);
+    width: 100%;
+    max-width: 360px;
+}
+
+h1 { font-size: 1.4rem; font-weight: 600; margin: 0; }
+p { font-size: 0.85rem; color: var(--sub); margin: 5px 0 25px 0; }
+
+.field-row { display: flex; gap: 15px; }
+.field { margin-bottom: 15px; flex: 1; }
+
+label {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: var(--text);
+    text-transform: uppercase;
+}
+
+input, select {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    font-size: 1rem;
+    background: #fafafa;
+}
+
+button {
+    width: 100%;
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.result-area { margin-top: 25px; }
+
+.metric {
+    padding: 15px;
+    border-radius: 12px;
+    background: #f5f5f7;
+    margin-bottom: 10px;
+}
+
+.metric-val { font-size: 1.5rem; font-weight: 700; display: block; }
+.metric-label { font-size: 0.75rem; color: var(--sub); font-weight: 600; }
+
+.status-tag {
+    display: inline-block;
+    margin-top: 5px;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.high { color: var(--danger); }
+.normal { color: var(--success); }

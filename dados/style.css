@@ -1,0 +1,191 @@
+:root {
+    --bg-color: #0f172a;
+    --card-bg: #1e293b;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --accent: #3b82f6;
+    --accent-hover: #2563eb;
+    --die-color: #ffffff;
+    --dot-color: #0f172a;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.container {
+    max-width: 1000px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+header {
+    text-align: center;
+}
+
+header h1 {
+    font-weight: 600;
+    font-size: 2.5rem;
+    letter-spacing: -0.5px;
+}
+
+header p {
+    color: var(--text-muted);
+    margin-top: 0.5rem;
+}
+
+/* 3D Dice Styles */
+.dice-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+    background: var(--card-bg);
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.dice-container {
+    display: flex;
+    gap: 3rem;
+}
+
+.scene {
+    width: 100px;
+    height: 100px;
+    perspective: 600px;
+}
+
+.cube {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.face {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: var(--die-color);
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    display: grid;
+    padding: 10px;
+    box-shadow: inset 0 0 15px rgba(0,0,0,0.1);
+}
+
+.dot {
+    display: block;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--dot-color);
+    align-self: center;
+    justify-self: center;
+}
+
+/* Face positions and dot layouts */
+.front { transform: translateZ(50px); grid-template-columns: 1fr; }
+.back { transform: rotateY(180deg) translateZ(50px); grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr 1fr; }
+.right { transform: rotateY(90deg) translateZ(50px); transform-origin: center; display: flex; justify-content: space-between; align-items: stretch; flex-direction: column;}
+.right .dot:nth-child(1) { align-self: flex-start; }
+.right .dot:nth-child(2) { align-self: center; }
+.right .dot:nth-child(3) { align-self: flex-end; }
+.left { transform: rotateY(-90deg) translateZ(50px); grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; }
+.top { transform: rotateX(90deg) translateZ(50px); grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr 1fr; }
+.top .dot:nth-child(3) { grid-column: 1 / span 2; }
+.bottom { transform: rotateX(-90deg) translateZ(50px); grid-template-columns: 1fr 1fr; grid-template-rows: 1fr; align-items: center;}
+
+button {
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 1rem 3rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+}
+
+button:hover {
+    background: var(--accent-hover);
+    transform: translateY(-2px);
+}
+
+/* Layout for Data */
+.data-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.card {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+
+.card h3 {
+    margin-bottom: 1rem;
+    font-weight: 400;
+    color: var(--text-muted);
+}
+
+.formula {
+    text-align: center;
+    background: rgba(0,0,0,0.2);
+    padding: 1rem;
+    border-radius: 8px;
+    margin: 1rem 0;
+    font-family: monospace;
+    font-size: 1.1rem;
+}
+
+.matrix {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 4px;
+    margin-top: 1rem;
+}
+
+.cell {
+    background: rgba(255,255,255,0.05);
+    padding: 8px 4px;
+    text-align: center;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    transition: all 0.3s;
+}
+
+.cell.active {
+    background: var(--accent);
+    color: white;
+    font-weight: bold;
+    transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+    .data-grid {
+        grid-template-columns: 1fr;
+    }
+}

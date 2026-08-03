@@ -1,0 +1,106 @@
+/* Definición de variables para mantener la consistencia del diseño */
+:root {
+    --color-fondo: #f4f7f6;
+    --color-blanco: #ffffff;
+    --color-primario: #40916c;
+    --color-secundario: #2d6a4f;
+    --color-texto: #333333;
+    --color-borde: #dddddd;
+    --sombra: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Configuración global */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--color-fondo);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* Contenedor principal (Tarjeta) */
+.card {
+    background-color: var(--color-blanco);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: var(--sombra);
+    width: 350px;
+}
+
+/* Estilo de los encabezados */
+h2 {
+    color: var(--color-secundario);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Agrupación de campos de entrada */
+.input-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--color-texto);
+    font-weight: 500;
+}
+
+/* Estilización de inputs y selects */
+input, 
+select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--color-borde);
+    border-radius: 10px;
+    box-sizing: border-box; /* Asegura que el padding no afecte el ancho */
+}
+
+/* Estilo del botón */
+button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    background-color: var(--color-primario);
+    color: var(--color-blanco);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--color-secundario);
+}
+
+/* Contenedor del Ticket (Oculto por defecto) */
+.ticket-container {
+    margin-top: 25px;
+    padding: 20px;
+    border: 2px dashed var(--color-primario);
+    border-radius: 10px;
+    background-color: #fcfcfc;
+}
+
+/* Clase para ocultar elementos */
+.hidden {
+    display: none;
+}
+
+/* Estilos específicos para texto dentro del ticket */
+.ticket-container h4 {
+    margin: 0 0 10px 0;
+    text-align: center;
+}
+
+.total {
+    font-weight: bold;
+    font-size: 1.2em;
+    color: var(--color-secundario);
+    border-top: 1px solid var(--color-borde);
+    padding-top: 10px;
+    margin-top: 10px;
+}

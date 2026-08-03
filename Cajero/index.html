@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATM Digital - Retiro de Fondos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="atm-container">
+        <header>
+            <div class="chip"></div>
+            <h1>Banca Digital</h1>
+        </header>
+
+        <div class="balance-card">
+            <span>Saldo Disponible</span>
+            <h2 id="display-saldo">$5,000.00</h2>
+        </div>
+
+        <div class="withdrawal-form">
+            <label for="monto">Monto a Retirar</label>
+            <div class="input-wrapper">
+                <span class="currency">$</span>
+                <input type="number" id="monto" placeholder="0.00" min="1">
+            </div>
+            
+            <button id="btn-retirar" onclick="procesarRetiro()">Confirmar Retiro</button>
+        </div>
+
+        <div id="status-box" class="status-box hidden">
+            <p id="mensaje-feedback"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

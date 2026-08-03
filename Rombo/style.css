@@ -1,0 +1,87 @@
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #121214;
+    color: #e1e1e6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.controls {
+    background-color: #202024;
+    padding: 15px 25px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    border: 1px solid #323238;
+}
+
+label {
+    font-size: 14px;
+    margin-right: 5px;
+}
+
+input {
+    background-color: #121214;
+    border: 1px solid #323238;
+    color: #fff;
+    padding: 6px;
+    border-radius: 4px;
+    width: 60px;
+    text-align: center;
+    margin-right: 15px;
+}
+
+button {
+    background-color: #04d361;
+    border: none;
+    color: #000;
+    padding: 7px 15px;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+button:hover {
+    background-color: #00b34d;
+}
+
+/* Contenedor dinámico que JS transformará en Grid */
+.matrix-container {
+    background-color: #202024;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #323238;
+    display: grid;
+    gap: 4px; /* Espacio entre celdas de la matriz */
+}
+
+/* Estilo de cada celda individual de la matriz */
+.matrix-cell {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: monospace;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: all 0.3s;
+}
+
+/* Celda que contiene el signo del rombo */
+.active-cell {
+    background-color: #04d361;
+    color: #121214;
+    box-shadow: 0 0 8px rgba(4, 211, 97, 0.5);
+}
+
+/* Celda vacía de la matriz (fondo) */
+.empty-cell {
+    background-color: #29292e;
+    color: #5c5c64;
+}

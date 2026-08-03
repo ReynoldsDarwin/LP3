@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Triaje Especializado - EsSalud</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="hospital-frame">
+        <header class="header-essalud">
+            <div class="logo-area">
+                <span class="logo-icon">✚</span>
+                <div class="logo-text">
+                    <strong>SISTEMA EXPERTO DE TRIAJE</strong>
+                    <span>Servicio de Emergencia y Cuidados Críticos</span>
+                </div>
+            </div>
+            <div class="date-info">V.2026.04</div>
+        </header>
+
+        <main class="content">
+            <section class="patient-form">
+                <h3><span class="step">1</span> Evaluación de Signos y Síntomas</h3>
+                
+                <div class="input-grid">
+                    <div class="field">
+                        <label>Estado de Conciencia</label>
+                        <select id="conciencia">
+                            <option value="alerta">Alerta / Consciente</option>
+                            <option value="estupor">Responde a estímulos (Estupor)</option>
+                            <option value="inconsciente">Inconsciente / No responde</option>
+                        </select>
+                    </div>
+
+                    <div class="field">
+                        <label>Dificultad Respiratoria</label>
+                        <select id="respiracion">
+                            <option value="normal">Normal</option>
+                            <option value="leve">Leve (disnea moderada)</option>
+                            <option value="severa">Severa (cianosis / asfixia)</option>
+                        </select>
+                    </div>
+
+                    <div class="field">
+                        <label>Hemorragia / Sangrado</label>
+                        <select id="hemorragia">
+                            <option value="no">No presenta</option>
+                            <option value="controlada">Controlada / Escasa</option>
+                            <option value="masiva">Masiva / No controlada</option>
+                        </select>
+                    </div>
+
+                    <div class="field">
+                        <label>Dolor Torácico (Pecho)</label>
+                        <select id="dolorPecho">
+                            <option value="no">No</option>
+                            <option value="si">Sí (Opresivo / Irradiado)</option>
+                        </select>
+                    </div>
+
+                    <div class="field">
+                        <label>Rango de Edad / Condición</label>
+                        <select id="edad">
+                            <option value="adulto">Adulto (General)</option>
+                            <option value="pediatrico">Pediatría (0-14 años)</option>
+                            <option value="obstetrico">Gestante / Obstétrica</option>
+                        </select>
+                    </div>
+
+                    <div class="field">
+                        <label>Motivo de Ingreso</label>
+                        <select id="motivo">
+                            <option value="clinico">Médico (Fiebre, Dolor, etc.)</option>
+                            <option value="trauma">Traumatismo (Golpe, Caída)</option>
+                            <option value="quirurgico">Abdomen Agudo (Posible Cirugía)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button class="btn-evaluar" onclick="evaluarPaciente()">PROCESAR CLASIFICACIÓN</button>
+            </section>
+
+            <section id="resultadoTriaje" class="result-area">
+                <p class="placeholder-text">Esperando ingreso de datos del paciente...</p>
+            </section>
+        </main>
+        
+        <footer class="footer-status">
+            Conforme a la Norma Técnica de Salud de los Servicios de Emergencia - MINSA/EsSalud.
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

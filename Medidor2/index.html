@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Consumo Eléctrico Pro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main-wrapper">
+        <div class="container">
+            <h1>Panel de Control de Energía</h1>
+            
+            <div class="input-section">
+                <div class="form-group">
+                    <label>Artefacto:</label>
+                    <input type="text" id="producto" placeholder="Ej: Refrigeradora">
+                </div>
+                <div class="form-group">
+                    <label>Watts:</label>
+                    <input type="number" id="watts" placeholder="W">
+                </div>
+                <div class="form-group">
+                    <label>Horas/Día:</label>
+                    <input type="number" id="horas" placeholder="H">
+                </div>
+                <button onclick="agregarArtefacto()" class="btn-add">Agregar a la Lista</button>
+            </div>
+
+            <table id="tabla-artefactos">
+                <thead>
+                    <tr>
+                        <th>Producto</th>
+                        <th>Potencia</th>
+                        <th>Uso</th>
+                        <th>Consumo (kWh)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    </tbody>
+            </table>
+
+            <button id="btn-generar" onclick="generarRecibo()" style="display:none;" class="btn-receipt">Generar Recibo Total</button>
+        </div>
+
+        <div id="recibo-container" class="recibo" style="display: none;">
+            <div class="recibo-header">
+                <div class="logo">⚡ Electro Simulado</div>
+                <div class="recibo-titulo">RECIBO DE LUZ</div>
+            </div>
+            
+            <div class="recibo-body">
+                <div class="recibo-row">
+                    <strong>Cliente:</strong> <span>Darwin Reynolds Cary Quispe</span>
+                </div>
+                <hr>
+                <h3>Detalle de Consumo</h3>
+                <div id="detalle-recibo">
+                    </div>
+                <hr>
+                <div class="recibo-stats">
+                    <div class="stat-box">
+                        <small>Consumo Total</small>
+                        <div id="total-kwh-recibo">0.00 kWh</div>
+                    </div>
+                    <div class="stat-box">
+                        <small>Precio Unitario</small>
+                        <div>S/. 0.5224</div>
+                    </div>
+                </div>
+                
+                <div class="total-section">
+                    <div class="total-label">TOTAL A PAGAR:</div>
+                    <div class="total-monto" id="total-soles">S/. 0.00</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

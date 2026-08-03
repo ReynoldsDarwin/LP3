@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análisis Climatológico y Modelado AR(1)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <header class="dashboard-header">
+            <div class="header-titles">
+                <h1>Monitoreo Climatológico Altiplánico</h1>
+                <p>Análisis de series temporales, inferencia estadística y modelo autorregresivo AR(1)</p>
+            </div>
+            <div class="location-badge">Puno • 3,827 m s. n. m.</div>
+        </header>
+
+        <section class="kpi-grid">
+            <div class="kpi-card">
+                <h3>Temp. Media Histórica</h3>
+                <p id="kpi-mean">-- °C</p>
+                <span>Promedio de la serie completa</span>
+            </div>
+            <div class="kpi-card highlight-min">
+                <h3>Mínima Absoluta</h3>
+                <p id="kpi-min">-- °C</p>
+                <span id="kpi-min-date">Frecuente en temporada seca</span>
+            </div>
+            <div class="kpi-card highlight-max">
+                <h3>Máxima Absoluta</h3>
+                <p id="kpi-max">-- °C</p>
+                <span id="kpi-max-date">Registrada bajo alta radiación</span>
+            </div>
+            <div class="kpi-card">
+                <h3>Anomalía de Tendencia</h3>
+                <p id="kpi-trend">+-- °C</p>
+                <span>Calentamiento estimado por década</span>
+            </div>
+        </section>
+
+        <div class="stats-grid">
+            <div class="stats-panel">
+                <h2>Prueba de Estacionariedad</h2>
+                <div class="stationarity-badge-container">
+                    <span class="badge" id="stationarity-status">Analizando...</span>
+                </div>
+                <p class="stats-description" id="stationarity-desc">
+                    Calculando los coeficientes de correlación y evaluando la estructura de la serie temporal...
+                </p>
+                
+                <h3 class="sub-section-title">Métricas de Soporte (ACF Lag 1-3)</h3>
+                <div class="metric-row">
+                    <span>Autocorrelación Lag 1 (<i>r₁</i>):</span>
+                    <strong id="acf-lag1">--</strong>
+                </div>
+                <div class="metric-row">
+                    <span>Autocorrelación Lag 2 (<i>r₂</i>):</span>
+                    <strong id="acf-lag2">--</strong>
+                </div>
+                <div class="metric-row">
+                    <span>Autocorrelación Lag 3 (<i>r₃</i>):</span>
+                    <strong id="acf-lag3">--</strong>
+                </div>
+            </div>
+
+            <div class="stats-panel">
+                <h2>Ecuación del Modelo AR(1)</h2>
+                <div class="equation-box">
+                    <code id="ar1-equation">Y_t = c + &phi; * Y_{t-1} + e_t</code>
+                </div>
+                
+                <h3 class="sub-section-title">Coeficientes Estimados</h3>
+                <div class="metric-row">
+                    <span>Constante (<i>c</i>):</span>
+                    <strong id="coef-constant">--</strong>
+                </div>
+                <div class="metric-row">
+                    <span>Coeficiente Autorregresivo (<i>&phi;</i>):</span>
+                    <strong id="coef-phi">--</strong>
+                </div>
+                <div class="metric-row">
+                    <span>Desviación Estándar del Error (<i>&sigma;<sub>&epsilon;</sub></i>):</span>
+                    <strong id="error-std">-- °C</strong>
+                </div>
+            </div>
+        </div>
+
+        <section class="performance-panel">
+            <h2>Métricas de Rendimiento y Bondad de Ajuste</h2>
+            <div class="performance-grid">
+                <div class="performance-card">
+                    <h3>R² (Coef. Determinación)</h3>
+                    <p id="metric-r2">--</p>
+                </div>
+                <div class="performance-card">
+                    <h3>MAE (Error Absoluto Medio)</h3>
+                    <p id="metric-mae">-- °C</p>
+                </div>
+                <div class="performance-card">
+                    <h3>RMSE (Raíz Error Cuadrático)</h3>
+                    <p id="metric-rmse">-- °C</p>
+                </div>
+                <div class="performance-card">
+                    <h3>Durbin-Watson (DW)</h3>
+                    <p id="metric-dw">--</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="visualization-panel">
+            <div class="chart-container">
+                <h2>Ajuste de la Serie Temporal: Temperatura Real vs AR(1) Estimado</h2>
+                <div class="chart-wrapper">
+                    <canvas id="tempChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <section class="data-panel">
+            <div class="data-header">
+                <h2>Registros Climatológicos Secuenciales (Simulados)</h2>
+                <div class="filter-controls">
+                    <label for="yearFilter">Filtrar por Bloque:</label>
+                    <select id="yearFilter">
+                        <option value="all">Ver todos los meses</option>
+                    </select>
+                </div>
+            </div>
+            <div class="table-wrapper">
+                <table id="dataTable">
+                    <thead>
+                        <tr>
+                            <th>Índice</th>
+                            <th>Mes Simulado</th>
+                            <th>Temp. Mínima Promedio (°C)</th>
+                            <th>Temp. Media Mensual (°C)</th>
+                            <th>Temp. Máxima Promedio (°C)</th>
+                            <th>Oscilación Térmica (°C)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody">
+                    </tbody>
+                </table>
+            </div>
+            <div class="pagination-controls">
+                <button id="prevBtn" disabled>Anterior</button>
+                <span id="pageIndicator">Página 1 de 1</span>
+                <button id="nextBtn">Siguiente</button>
+            </div>
+        </section>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

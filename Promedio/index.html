@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Promedios Premium</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="glass-card">
+        <h1>Promedio Académico</h1>
+        <p class="subtitle">Ingresa tus notas (rango 0 - 20)</p>
+        
+        <div class="input-group">
+            <div class="field">
+                <label for="n1">Nota 1</label>
+                <input type="number" id="n1" min="0" max="20" placeholder="00">
+            </div>
+            <div class="field">
+                <label for="n2">Nota 2</label>
+                <input type="number" id="n2" min="0" max="20" placeholder="00">
+            </div>
+            <div class="field">
+                <label for="n3">Nota 3</label>
+                <input type="number" id="n3" min="0" max="20" placeholder="00">
+            </div>
+        </div>
+
+        <button onclick="calcularPromedio()">Calcular Resultado</button>
+
+        <div id="result-container" class="hidden">
+            <div class="divider"></div>
+            <div class="score-display">
+                <span id="score-label">Promedio:</span>
+                <span id="score-value">0.0</span>
+            </div>
+            <p class="textstyle" id="status-text"></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

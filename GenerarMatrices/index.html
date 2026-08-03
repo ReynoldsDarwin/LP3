@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Sistema de Calificaciones</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="grade-card">
+        <h2>Registro de Notas</h2>
+        
+        <div class="form-group">
+            <label>Estudiante (Cadena):</label>
+            <input type="text" id="estudiante" placeholder="Nombre completo">
+            
+            <label>Nota Examen 1 (Cuantitativo):</label>
+            <input type="number" id="nota1" min="0" max="20" value="" placeholder="00-20">
+            
+            <label>Nota Examen 2 (Cuantitativo):</label>
+            <input type="number" id="nota2" min="0" max="20" value="" placeholder="00-20">
+        </div>
+
+        <button onclick="calcularPromedio()">Procesar Promedio</button>
+
+        <div id="boleta" class="boleta-container">
+            <h3>BOLETA DE NOTAS</h3>
+            <p><strong>Alumno:</strong> <span id="txtAlumno"></span></p>
+            <p><strong>Promedio Final:</strong> <span id="txtPromedio"></span></p>
+            <hr>
+            <div id="statusBox" class="status-badge">
+                <span id="txtLetra"></span><span id="txtMensaje"></span>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

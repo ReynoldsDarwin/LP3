@@ -1,0 +1,82 @@
+:root {
+    --bg-color: #121212;
+    --calc-bg: #1e1e1e;
+    --accent-color: #ffd700; 
+    --text-main: #ffffff;
+    --text-dim: #a0a0a0;
+}
+
+body {
+    background: var(--bg-color);
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.calc-frame {
+    background: var(--calc-bg);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    width: 320px;
+    border: 1px solid #333;
+    text-align: center;
+}
+
+.calc-header h3 {
+    color: var(--text-dim);
+    letter-spacing: 2px;
+    font-size: 0.8rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+input {
+    background: #2a2a2a;
+    border: none;
+    padding: 15px;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 12px;
+    color: white;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 20px;
+    outline: none;
+    transition: 0.3s;
+}
+
+input:focus {
+    border: 1px solid var(--accent-color);
+}
+
+.btn-convert {
+    background: var(--accent-color);
+    color: #000;
+    border: none;
+    padding: 15px;
+    width: 100%;
+    border-radius: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: transform 0.2s, background 0.3s;
+}
+
+.btn-convert:hover {
+    filter: brightness(1.2);
+    transform: translateY(-2px);
+}
+
+.result-display {
+    margin-top: 30px;
+    padding: 20px;
+    border-top: 1px solid #333;
+    color: var(--text-main);
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+}

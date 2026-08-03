@@ -1,0 +1,87 @@
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #0f172a;
+    color: #f8fafc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.controls {
+    background-color: #1e293b;
+    padding: 15px 25px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    border: 1px solid #334155;
+}
+
+label {
+    font-size: 14px;
+    margin-right: 10px;
+}
+
+input {
+    background-color: #0f172a;
+    border: 1px solid #334155;
+    color: #fff;
+    padding: 6px;
+    border-radius: 4px;
+    width: 60px;
+    text-align: center;
+    margin-right: 15px;
+}
+
+button {
+    background-color: #f59e0b;
+    border: none;
+    color: #0f172a;
+    padding: 7px 15px;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+button:hover {
+    background-color: #d97706;
+}
+
+/* Contenedor de la cuadrícula */
+.matrix-container {
+    background-color: #1e293b;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #334155;
+    display: grid;
+    gap: 6px;
+}
+
+/* Celda individual */
+.matrix-cell {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: all 0.2s;
+}
+
+/* Estilo para las posiciones del triángulo (1) */
+.content-cell {
+    background-color: #f59e0b;
+    color: #0f172a;
+    box-shadow: 0 0 6px rgba(245, 158, 11, 0.4);
+}
+
+/* Estilo para las posiciones vacías (0) */
+.empty-cell {
+    background-color: #334155;
+    color: #94a3b8;
+}

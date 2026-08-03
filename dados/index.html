@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Probabilidad de Dados | Premium</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Simulador de Probabilidades</h1>
+            <p>Análisis estocástico del lanzamiento de dos dados</p>
+        </header>
+
+        <section class="dice-section">
+            <div class="dice-container">
+                <div class="scene">
+                    <div class="cube" id="die1">
+                        <div class="face front"><span class="dot"></span></div>
+                        <div class="face back"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+                        <div class="face right"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+                        <div class="face left"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+                        <div class="face top"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+                        <div class="face bottom"><span class="dot"></span><span class="dot"></span></div>
+                    </div>
+                </div>
+                <div class="scene">
+                    <div class="cube" id="die2">
+                        <div class="face front"><span class="dot"></span></div>
+                        <div class="face back"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+                        <div class="face right"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+                        <div class="face left"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+                        <div class="face top"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+                        <div class="face bottom"><span class="dot"></span><span class="dot"></span></div>
+                    </div>
+                </div>
+            </div>
+            <button id="rollBtn">Lanzar Dados</button>
+            <h2 id="result-text">Suma: -</h2>
+        </section>
+
+        <div class="data-grid">
+            <section class="chart-section card">
+                <h3>Distribución de Probabilidades</h3>
+                <canvas id="probChart"></canvas>
+            </section>
+
+            <section class="math-section card">
+                <h3>Espacio Muestral ($\Omega$)</h3>
+                <p>Existen 36 combinaciones posibles ($6 \times 6$). La probabilidad de cualquier suma $S$ se calcula como:</p>
+                <div class="formula">
+                    $$P(S) = \frac{\text{Casos favorables}}{\text{Casos totales (36)}}$$
+                </div>
+                <div class="matrix" id="sample-space">
+                    </div>
+            </section>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

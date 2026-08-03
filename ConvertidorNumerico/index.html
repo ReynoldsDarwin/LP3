@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora Numérica</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="calc-frame">
+        <header class="calc-header">
+            <h3>CONVERTIDOR NUMÉRICO</h3>
+        </header>
+        
+        <input type="number" id="numInput" min="0" max="10000" placeholder="0000">
+        
+        <button class="btn-convert" onclick="convertirConCase()">CALCULAR</button>
+        
+        <div class="result-display">
+            <span id="output">RESULTADO</span>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

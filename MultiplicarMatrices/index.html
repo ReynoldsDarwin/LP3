@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplicación de Matrices Interactive</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Multiplicador de Matrices</h1>
+
+    <div class="controls">
+        <label>Filas A: <input type="number" id="rowsA" value="2" min="1" max="5"></label>
+        <label>Columnas A / Filas B: <input type="number" id="colsA_rowsB" value="3" min="1" max="5"></label>
+        <label>Columnas B: <input type="number" id="colsB" value="2" min="1" max="5"></label>
+        <button id="btn-generate" onclick="generateMatrices()">Generar Matrices</button>
+    </div>
+
+    <div class="matrix-container">
+        <div class="matrix-box">
+            <h3>Matriz A</h3>
+            <div id="containerA" class="grid"></div>
+        </div>
+
+        <div class="matrix-box">
+            <h3>Matriz B</h3>
+            <div id="containerB" class="grid"></div>
+        </div>
+    </div>
+
+    <button id="btn-multiply" onclick="multiplyMatrices()">Calcular A × B</button>
+
+    <div class="matrix-container" style="margin-top: 20px;">
+        <div class="matrix-box result-box">
+            <h3>Resultado (Matriz C)</h3>
+            <div id="containerResult" class="grid"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

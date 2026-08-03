@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Predicción de Riesgo de Salud - Regresión Logística</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>Predicción de Riesgo de Salud</h1>
+      <p>Modelo de Regresión Logística con cálculo de probabilidad y ajuste Pseudo-R²</p>
+    </header>
+
+    <section class="card">
+      <h2>1. Cargar Dataset (Excel)</h2>
+      <div class="actions">
+        <button id="downloadSampleBtn" class="btn btn-secondary">Descargar Excel Simulado</button>
+        <label for="fileInput" class="btn btn-primary">
+          Cargar archivo .xlsx
+          <input type="file" id="fileInput" accept=".xlsx, .xls" hidden>
+        </label>
+      </div>
+      <div id="status" class="status-msg">Esperando archivo Excel de entrenamiento...</div>
+    </section>
+
+    <section class="card disabled" id="predictionCard">
+      <h2>2. Evaluar Nuevo Paciente</h2>
+      <form id="patientForm" class="grid-form">
+        <div class="form-group">
+          <label for="age">Edad (años)</label>
+          <input type="number" id="age" min="1" max="120" required value="50">
+        </div>
+        <div class="form-group">
+          <label for="bmi">IMC (kg/m²)</label>
+          <input type="number" step="0.1" id="bmi" min="10" max="60" required value="29.0">
+        </div>
+        <div class="form-group">
+          <label for="glucose">Glucosa (mg/dL)</label>
+          <input type="number" id="glucose" min="50" max="300" required value="135">
+        </div>
+        <div class="form-group">
+          <label for="pressure">Presión Arterial (mmHg)</label>
+          <input type="number" id="pressure" min="50" max="200" required value="130">
+        </div>
+        <button type="submit" class="btn btn-primary full-width">Calcular Probabilidad de Riesgo</button>
+      </form>
+    </section>
+
+    <section class="card hidden" id="resultCard">
+      <h2>3. Resultado del Modelo de Regresión</h2>
+      <div class="result-box" id="resultBox">
+        <div class="probability-container">
+          <span class="prob-number" id="probPercent">0%</span>
+          <span class="prob-label">Probabilidad de Riesgo Alto</span>
+        </div>
+        
+        <div class="progress-bar-bg">
+          <div class="progress-bar-fill" id="progressBar"></div>
+        </div>
+
+        <div class="metrics-grid">
+          <div class="metric-item">
+            <span class="metric-label">Clasificación:</span>
+            <span class="metric-value" id="riskClass">-</span>
+          </div>
+          <div class="metric-item">
+            <span class="metric-label">Ajuste del Modelo (Pseudo-R²):</span>
+            <span class="metric-value" id="r2Value">0%</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

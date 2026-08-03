@@ -1,0 +1,113 @@
+:root {
+    --bg: #0a1825;
+    --card: #ffffff;
+    --text-main: #1a1a1a;
+    --text-sub: #6c757d;
+    --accent: #000000; /* Negro sólido para un look minimalista */
+    --border: #e0e0e0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: var(--bg);
+    color: var(--text-main);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.card {
+    background: var(--card);
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    width: 100%;
+    max-width: 320px;
+    border: 1px solid var(--border);
+}
+
+header {
+    margin-bottom: 2rem;
+}
+
+h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+p {
+    color: var(--text-sub);
+    font-size: 0.85rem;
+    margin-top: 4px;
+}
+
+.inputs {
+    margin-bottom: 1.5rem;
+}
+
+.field {
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+label {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 6px;
+    color: var(--text-sub);
+}
+
+input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--accent);
+}
+
+button {
+    width: 100%;
+    background-color: var(--accent);
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+button:hover {
+    opacity: 0.85;
+}
+
+.result-box {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.val-imc {
+    font-size: 2rem;
+    font-weight: 700;
+    display: block;
+}
+
+.cat-imc {
+    color: var(--text-sub);
+    font-size: 1rem;
+    margin-top: 4px;
+}

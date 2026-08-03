@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora IMC</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="card">
+        <header>
+            <h1>Calculadora IMC</h1>
+            <p>Bienestar y salud</p>
+        </header>
+        
+        <div class="inputs">
+            <div class="field">
+                <label>Peso (kg)</label>
+                <input type="number" id="peso" placeholder="ej. 70" step="0.1">
+            </div>
+            <div class="field">
+                <label>Altura (m)</label>
+                <input type="number" id="altura" placeholder="ej. 1.75" step="0.01">
+            </div>
+            <div class="field">
+                <label>Cintura (cm)</label>
+                <input type="number" id="cintura" placeholder="ej. 60" step="0.001">
+            </div>
+        </div>
+
+        <button onclick="calcularIMC()">Calcular mi índice</button>
+
+        <div id="resultado" class="result-box"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

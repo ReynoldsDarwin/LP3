@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro Sistema | Darwin Reynolds</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="form-container">
+        <header class="form-header">
+            <p class="subtitle">DATA ARCHIVE SYSTEM</p>
+            <h1>Ingreso de Datos</h1>
+            <div class="accent-line"></div>
+        </header>
+
+        <form action="/guardar" method="POST">
+            <div class="input-group">
+                <label for="codigo">Código (ID)</label>
+                <input type="text" name="codigo" id="codigo" placeholder="Ej. 20261234" required>
+            </div>
+
+            <div class="input-group">
+                <label for="nombres">Nombres</label>
+                <input type="text" name="nombres" id="nombres" required>
+            </div>
+
+            <div class="input-group-row" style="display: flex; gap: 15px;">
+                <div class="input-group" style="flex: 1;">
+                    <label for="apellido_p">Apellido Paterno</label>
+                    <input type="text" name="apellido_p" id="apellido_p" required>
+                </div>
+                <div class="input-group" style="flex: 1;">
+                    <label for="apellido_m">Apellido Materno</label>
+                    <input type="text" name="apellido_m" id="apellido_m" required>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label for="edad">Edad</label>
+                <input type="number" name="edad" id="edad" min="1" max="120" required>
+            </div>
+
+            <div class="input-group">
+                <label for="categoria">Categoría de Análisis</label>
+                <select name="categoria" id="categoria">
+                    <option value="probabilidad">Probabilidad</option>
+                    <option value="desarrollo_web">Desarrollo Web</option>
+                    <option value="backend">Backend Python</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn-submit">Guardar Datos</button>
+        </form>
+    </div>
+
+</body>
+</html>

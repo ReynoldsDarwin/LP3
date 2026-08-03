@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Cajero Automático Corregido</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="atm-card">
+        <h1>Banca Segura</h1>
+        <div class="screen">
+            <p>Saldo Disponible:</p>
+            <h2 id="saldoDisplay">$1000.00</h2>
+        </div>
+
+        <div class="inputs">
+            <input type="text" id="nombre" placeholder="Nombre del Cliente">
+            <input type="number" id="monto" placeholder="Monto a procesar" min="1">
+            <select id="tipoOperacion">
+                <option value="consultar">Solo Consultar</option>
+                <option value="depositar">Depositar (+)</option>
+                <option value="retirar">Retirar (-)</option>
+            </select>
+            <button onclick="operar()">Confirmar Transacción</button>
+        </div>
+
+        <div class="receipt">
+            <strong>Estado:</strong>
+            <p id="mensajeEstado">Esperando operación...</p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

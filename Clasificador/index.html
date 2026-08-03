@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clasificador de Reciclaje</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Clasificador de Residuos</h1>
+        <p>¿Qué quieres reciclar hoy?</p>
+        
+        <div class="search-box">
+            <input type="text" id="userInput" placeholder="Ej: Botella, Periódico, Manzana...">
+            <button onclick="clasificar()">Clasificar</button>
+        </div>
+
+        <div class="bins-grid">
+            <div class="bin" id="azul">
+                <div class="icon">📄</div>
+                <span>Azul</span>
+                <p>Papel y Cartón</p>
+            </div>
+            <div class="bin" id="verde">
+                <div class="icon">🍾</div>
+                <span>Verde</span>
+                <p>Vidrio</p>
+            </div>
+            <div class="bin" id="amarillo">
+                <div class="icon">🧴</div>
+                <span>Amarillo</span>
+                <p>Plástico y Latas</p>
+            </div>
+            <div class="bin" id="gris">
+                <div class="icon">🍎</div>
+                <span>Gris</span>
+                <p>Orgánico</p>
+            </div>
+        </div>
+
+        <p id="mensaje"></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

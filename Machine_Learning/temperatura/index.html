@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Machine Learning - Temperatura Lago Titicaca</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Predicción de Temperatura - Lago Titicaca</h1>
+      <p>Comparativa de Modelos de Machine Learning (2011 - 2024)</p>
+    </header>
+
+    <section class="dashboard">
+      <div class="card metrics-card">
+        <h2>Comparativa de Modelos</h2>
+        <table id="metrics-table">
+          <thead>
+            <tr>
+              <th>Modelo</th>
+              <th>R² Score</th>
+              <th>RMSE (°C)</th>
+              <th>Estado</th>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="card predictor-card">
+        <h2>Simulador de Predicción</h2>
+        <div class="form-group">
+          <label for="select-year">Año:</label>
+          <input type="number" id="select-year" min="2011" max="2030" value="2025">
+        </div>
+        <div class="form-group">
+          <label for="select-month">Mes:</label>
+          <select id="select-month">
+            <option value="1">Enero</option>
+            <option value="2">Febrero</option>
+            <option value="3">Marzo</option>
+            <option value="4">Abril</option>
+            <option value="5">Mayo</option>
+            <option value="6">Junio</option>
+            <option value="7">Julio</option>
+            <option value="8">Agosto</option>
+            <option value="9">Setiembre</option>
+            <option value="10">Octubre</option>
+            <option value="11">Noviembre</option>
+            <option value="12">Diciembre</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="select-model">Modelo ML:</label>
+          <select id="select-model">
+            <option value="rf">Random Forest (Mejor Modelo)</option>
+            <option value="poly">Regresión Polinomial</option>
+            <option value="linear">Regresión Lineal</option>
+          </select>
+        </div>
+        <button id="btn-predict">Calcular Temperatura</button>
+        <div class="result" id="prediction-result">
+          <span>Temperatura Estimada:</span>
+          <strong id="temp-value">-- °C</strong>
+        </div>
+      </div>
+    </section>
+
+    <section class="card chart-section">
+      <h2>Visualización de Datos Históricos y Ajuste del Modelo</h2>
+      <div class="chart-container">
+        <canvas id="tempChart"></canvas>
+      </div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

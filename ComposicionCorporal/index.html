@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análisis de Composición Corporal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="card">
+        <header>
+            <h1>Composición Corporal</h1>
+            <p>Evaluación de IMC y Riesgo Abdominal</p>
+        </header>
+        
+        <div class="inputs">
+            <div class="field-row">
+                <div class="field">
+                    <label>Peso (kg)</label>
+                    <input type="number" id="peso" placeholder="70" step="0.1">
+                </div>
+                <div class="field">
+                    <label>Altura (m)</label>
+                    <input type="number" id="altura" placeholder="1.70" step="0.01">
+                </div>
+            </div>
+
+            <div class="field">
+                <label>Cintura (cm)</label>
+                <input type="number" id="cintura" placeholder="85" step="0.1">
+            </div>
+
+            <div class="field">
+                <label>Género</label>
+                <select id="genero">
+                    <option value="hombre">Hombre</option>
+                    <option value="mujer">Mujer</option>
+                </select>
+            </div>
+        </div>
+
+        <button onclick="analizarSalud()">Generar Reporte</button>
+
+        <div id="resultado" class="result-area"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

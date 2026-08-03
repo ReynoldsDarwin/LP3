@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Monitor de Temperatura</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="monitor-card">
+        <h1>Termostato Digital</h1>
+        
+        <div class="sensor-input">
+            <label>Sensor ID (Cadena):</label>
+            <input type="text" id="sensorId" value="SENS-001">
+            
+            <label>Grados Celsius (Cuantitativo):</label>
+            <input type="range" id="tempRange" min="-10" max="50" value="20" oninput="actualizarLectura()">
+            <div class="valor-actual"><span id="numTemp">20</span>°C</div>
+        </div>
+
+        <button onclick="analizarClima()">Analizar Ambiente</button>
+
+        <div id="pantalla" class="pantalla-digital">
+            <p><strong>Estado:</strong> <span id="txtEstado">ESPERANDO...</span></p>
+            <p><strong>Alerta:</strong> <span id="txtAlerta">---</span></p>
+            <div id="indicadorColor" class="triangulo"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
